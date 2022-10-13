@@ -1,5 +1,10 @@
-.container{
-  max-width: 900px;
+.root{
+  --special-color:tomato;
+  --special-color:#551cf1;
+  --light-color:white;
+  --dark-color:black;
+}
+.container{ max-width: 900px;
   margin: 0 auto;
 }
 
@@ -39,8 +44,45 @@ h2+p{
 a[href="#"]{
   color: tomato;
 }
-
+/* ^= is to keep if value begins with */
 a[href^="http"]{
   border-left: 4px solid #551CF1;
   padding-left: 1rem;
 }
+
+nav a,
+nav a:link,
+nav a:visited{
+  display:inline-block;
+  text-decoration:none;
+  text-transform:uppercase;
+  transition:transform .5;
+
+}
+
+nav a:hover,
+nav a focus{
+
+  text-decoration: underline;
+  transform:scale(1.4);
+}
+
+nav a:active{
+  transform: scale(1.4) translateX(10px);
+}
+
+
+a[href$=".pdf"]::after{
+  content:"\2913";
+  font-size:1.25rem;
+  color:tomato;
+}
+
+h2*p::first-line{
+  color:tomato;}
+
+h3*p::first-letter
+{background-color: #551CF1;
+color:white;
+padding:.25rem;
+margin-right:.q0r}
